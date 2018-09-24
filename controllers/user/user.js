@@ -1,6 +1,4 @@
 const uuid = require('uuid')
-// const utilities = require('../../utilities'),
-//   userUtilities = utilities.data.user.user
 const njwt =  require('njwt');
 module.exports = {
 	loginController: function(req, res, next){
@@ -12,7 +10,6 @@ module.exports = {
 			permissions: 'logged-in'
 		}
 		var jwtObj = njwt.create(claims,secretKey,'HS256');
-		console.log(jwtObj);
 		var token = jwtObj.compact();
 		res.status(200).send({ auth: true, token: token });
 	}

@@ -5,7 +5,6 @@ module.exports = {
 	        doc: req.body.doc,
 	        patchObj: req.body.patchObj
 	      };
-	      console.log('---------------',attributes)
 	      req.controller = {}
 	      req.controller.args = attributes;
 	      next();
