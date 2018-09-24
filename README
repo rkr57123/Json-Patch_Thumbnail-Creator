@@ -1,0 +1,49 @@
+# Node Api project skeleton!!
+
+## Environment Requirements:
+1. install latest version of node LTE,
+2. install npm
+
+
+## Getting started:
+1. npm install
+2. npm start -> run the project
+3. npm test -> test the project
+
+##Help to npm start to run the apis in postman
+1. POST-login
+-localhost:3000/api/user/user/login
+-body = {
+	"username" :"anything",
+	"password" :"anything"
+	}
+
+Result -> this will return a timeout based token for next two apis
+
+2. POST- json-patch
+-localhost:3000/api/jsonpatch/jsonpatch/jsonpatching
+-headers= token{from previous step}
+-body= {
+		"doc" : {"foo": [1, 3]},
+		"patchObj": [{"op": "add", "path": "/foo/1", "value": 2}]
+	}
+Result -> {
+	    "patch": {
+	        "foo": [
+	            1,
+	            2,
+	            3
+	        ]
+	    }
+	}
+
+3. POST-thumbnail-creator
+-localhost:3000/api/thumbnail/thumbnail/createThumbnail
+
+-headers = token {same as prrevious step}
+
+-body -> {
+		"url": "https://www.google.com/images/srpr/logo3w.png"
+	}
+
+Result -> it will download the image in images folder and create thumbnail in the same folder
